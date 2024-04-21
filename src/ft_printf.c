@@ -33,6 +33,8 @@ static int	ft_format(char c, va_list ap)
 		result += ft_putnbrhex(va_arg(ap, int), c);
 	else if (c == '%')
 		result += write(1, "%", 1);
+	else
+		return (0);
 	return (result);
 }
 
