@@ -18,11 +18,12 @@ int	ft_putstr(char *str)
 	int	result;
 
 	i = 0;
+	result = 0;
 	if (!str)
-		result = write(1, "(null)", 6);
+		result += write(1, "(null)", 6);
 	while (str[i])
 	{
-		result = write(1, &str[i], 1);
+		result += write(1, &str[i], 1);
 		i++;
 	}
 	return (result);
