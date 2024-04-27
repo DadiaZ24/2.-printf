@@ -15,17 +15,16 @@ CFLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 NAME = libftprintf.a
 
-SRCS = src/ft_printf.c src/ft_putchar.c src/ft_putnbr.c src/ft_putnbrhex.c\
-			src/ft_putptr.c src/ft_putstr.c src/ft_utoa.c
+SRCS = src/ft_printf.c src/ft_printf_utils.c src/ft_printf_utils2.c
 OBJS =  $(SRCS:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
-
+	
 clean:
-	$(RM) $(OBJS) 
+	$(RM) $(OBJS)
 fclean: clean
 	$(RM) $(NAME)
 re: fclean all
