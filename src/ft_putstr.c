@@ -20,7 +20,10 @@ int	ft_putstr(char *str)
 	i = 0;
 	result = 0;
 	if (!str)
+	{
 		result += write(1, "(null)", 6);
+		return (result);
+	}
 	while (str[i])
 	{
 		result += write(1, &str[i], 1);

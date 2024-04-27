@@ -40,7 +40,7 @@ int	ft_putptr(unsigned long nbr)
 
 	result = 0;
 	if (!nbr)
-		return (write(1, "(null)", 6));
+		return (write(1, "(nil)", 5));
 	result += ft_putstr("0x");
 	result += putptrhex(nbr, 'x');
 	return (result);
