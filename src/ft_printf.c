@@ -30,7 +30,7 @@ static int	ft_format(char c, va_list ap)
 	else if (c == 'u')
 		result += ft_utoa(va_arg(ap, unsigned int));
 	else if (c == 'x' || c == 'X')
-		result += ft_putnbrhex(va_arg(ap, int), c);
+		result += ft_putnbrhex(va_arg(ap, unsigned int), c);
 	else if (c == '%')
 		result += write(1, "%", 1);
 	else
