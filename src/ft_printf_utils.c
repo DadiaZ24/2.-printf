@@ -6,7 +6,7 @@
 /*   By: ddias-fe <ddias-fe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 17:09:22 by ddias-fe          #+#    #+#             */
-/*   Updated: 2024/04/27 17:09:58 by ddias-fe         ###   ########.fr       */
+/*   Updated: 2024/05/04 14:11:26 by ddias-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ int	ft_putnbr(int nbr)
 	int	result;
 
 	result = 0;
+	if (nbr == -2147483648)
+	{
+		result += write(1, "-2147483648", 11);
+		return (result);
+	}
 	if (nbr < 0)
 	{
 		result += ft_putchar('-');
@@ -40,6 +45,7 @@ int	ft_putnbr(int nbr)
 	}
 	return (result);
 }
+
 int	ft_putnbrhex(unsigned int nbr, const char c)
 {
 	char	*base;
@@ -61,6 +67,7 @@ int	ft_putnbrhex(unsigned int nbr, const char c)
 	}
 	return (result);
 }
+
 int	putptrhex(unsigned long nbr, const char c)
 {
 	char	*base;

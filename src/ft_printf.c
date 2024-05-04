@@ -33,8 +33,6 @@ static int	ft_format(char c, va_list ap)
 		result += ft_putnbrhex(va_arg(ap, unsigned int), c);
 	else if (c == '%')
 		result += write(1, "%", 1);
-	else
-		return (0);
 	return (result);
 }
 
@@ -47,7 +45,7 @@ int	ft_printf(const char *str, ...)
 	result = 0;
 	if (!str)
 		return (0);
-	while (*str != 0)
+	while (*str)
 	{
 		if (*str == '%')
 			result += ft_format(*(++str), ap);

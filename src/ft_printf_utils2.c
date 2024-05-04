@@ -6,7 +6,7 @@
 /*   By: ddias-fe <ddias-fe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 17:11:05 by ddias-fe          #+#    #+#             */
-/*   Updated: 2024/04/27 17:11:17 by ddias-fe         ###   ########.fr       */
+/*   Updated: 2024/05/04 16:37:27 by ddias-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ unsigned int	ft_usize(unsigned int nbr)
 	unsigned int	count;
 
 	count = 0;
+	if (nbr == 0)
+		count++;
 	while (nbr != 0)
 	{
 		count++;
@@ -36,6 +38,8 @@ int	ft_utoa(unsigned int nbr)
 	if (!newstr)
 		return (0);
 	newstr[size] = '\0';
+	if (nbr == 0)
+		newstr[0] = '0';
 	while (nbr != 0)
 	{
 		size--;
